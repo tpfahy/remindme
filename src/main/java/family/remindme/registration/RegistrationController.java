@@ -9,15 +9,16 @@ public class RegistrationController {
 
     @GetMapping("/register")
     public String showForm(Model model) {
-        model.addAttribute("registration", new Registration());
+        model.addAttribute("user", new User());
         return "register";
     }
 
     @PostMapping("/register")
-    public String submitForm(@ModelAttribute Registration user, Model model) {
+    public String submitForm(@ModelAttribute User user, Model model) {
         model.addAttribute("message", 
-            "Thank you, " + user.getFirstName() + " " + user.getLastName() + 
-            ". Your phone number " + user.getPhoneNumber() + " has been registered.");
+            "Thank you, " + user.getFirstName() + " " + user.getLastName()  
+            + ". Your phone number has been registered with the database and "
+            + "is pending approval.");
         return "result";
     }
 }

@@ -1,16 +1,17 @@
-package family.remindme;
-
-public class Registration {
+package family.remindme.registration;
+// Might need to come back to this class later and make it look better
+public class User {
     private String firstName;
     private String lastName;
     private String phoneNumber;
 
-    public Registration(){
+    public User(){
         // No fields because the user is prompted for the fields
     }
-    public void setFirstName(String firstName)
+    public boolean setFirstName(String firstName)
     {
         this.firstName = firstName;
+        return true;
     }
 
     public String getFirstName()
@@ -18,9 +19,10 @@ public class Registration {
         return this.firstName;
     }
 
-    public void setLastName(String lastName)
+    public boolean setLastName(String lastName)
     {
         this.lastName = lastName;
+        return true;
     }
 
     public String getLastName()
@@ -28,10 +30,11 @@ public class Registration {
         return this.lastName;
     }
 
-    public void setPhoneNumber(String phoneNumber){
+    public boolean setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
+        return true;
     }
-    
+
     public String getPhoneNumber()
     {
         return this.phoneNumber;
