@@ -6,9 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class Test_User {
-
-
+public class Test_User 
+{
     @Test
     void createUser()
     {
