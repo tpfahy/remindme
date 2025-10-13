@@ -23,8 +23,7 @@ public class Database
             DriverManager.getConnection(conString);
             System.out.println("Successful DB connection");
         } catch (Exception e) {
-            System.out.printf("The connection string was %s", conString);
-            e.printStackTrace();
+            System.out.println("There was some error with the db class");
         }
     }
 
