@@ -12,23 +12,30 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class Database 
 {
+    @Value("$database.url")
     private String conString;
 
-    public Database(@Value("${database.url}") String conString)
+    public Database()
     {
-        this.conString = conString;
-        
-        try
-        {
-            DriverManager.getConnection(conString);
-            System.out.println("Successful DB connection");
-        } catch (Exception e) {
-            System.out.println("There was some error with the db class");
-        }
+        // maybe put something here maybe not idk
     }
 
     public String getConString() {
-        return "Nice try :/";
+        return "Nice try";
+    }
+
+    public boolean connect()
+    {
+        try {
+            System.out.println("Connecting to database . . .\n");
+            DriverManager.getConnection(conString);
+            System.out.println("Successful DB connection\n");
+            return true;
+        } catch (Exception e) {
+            System.out.println("There was some error with the db class :/");
+            return false;
+        }
+        
     }
 
 }

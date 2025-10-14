@@ -1,0 +1,6 @@
+- Setup containers to do db testing and other testing
+- Write logic for sending queries to the db
+  - think of use cases:
+    - upcoming reminders, new reminders, past reminders, all reminders on a certain day etc
+- Write the container class that is used for testing
+- Get twilio to freaking approve my campaign 
