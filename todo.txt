@@ -1,6 +1,33 @@
-- Setup containers to do db testing and other testing
-- Write logic for sending queries to the db
+
+----
+TODO:
+----
+
+- Setup containers to do db testing and other testing: TODO
+
+- host the app somewhere: TODO
+  - options: Google, AWS
+
+- Write logic for sending queries to the db: TODO
   - think of use cases:
     - upcoming reminders, new reminders, past reminders, all reminders on a certain day etc
-- Write the container class that is used for testing
-- Get twilio to freaking approve my campaign 
+    - might need to change the schema of the db to account for 1 more char in the number
+
+- Write the container class that is used for testing: TODO
+
+
+-----------
+IN PROGRESS:
+-----------
+
+- write unit tests for parsing twilio xml
+  - make the test.xml in the same directory as the file, just looks more clean
+  - will need to find a way to have multiple files for each aspect and how to make it
+    so each request is transformed into a valid query
+
+----
+DONE:
+----
+- Get the database connection working
+
+- Get twilio to freaking approve my campaign

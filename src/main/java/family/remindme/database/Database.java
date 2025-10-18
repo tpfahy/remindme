@@ -4,6 +4,7 @@ package family.remindme.database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -14,28 +15,26 @@ public class Database
 {
     @Value("$database.url")
     private String conString;
-
+    private String connectionTime;
     public Database()
     {
         // maybe put something here maybe not idk
+        this.connectionTime = "someTime";
+    }
+
+    public Connection connect() throws SQLException
+    {
+        System.out.println("Connecting to database . . .\n");
+        return DriverManager.getConnection(conString);
+    }
+
+    public String getConnectionTime()
+    {
+        return this.connectionTime;
     }
 
     public String getConString() {
         return "Nice try";
-    }
-
-    public boolean connect()
-    {
-        try {
-            System.out.println("Connecting to database . . .\n");
-            DriverManager.getConnection(conString);
-            System.out.println("Successful DB connection\n");
-            return true;
-        } catch (Exception e) {
-            System.out.println("There was some error with the db class :/");
-            return false;
-        }
-        
     }
 
 }
