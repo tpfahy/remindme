@@ -4,6 +4,9 @@ package family.remindme;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
 
 import java.io.File;
 
@@ -32,8 +35,15 @@ public class Test_Parse
             Document doc = dBuilder.parse(twilFile);
 
             doc.getDocumentElement().normalize();
-            System.out.println("some thing:");
-            System.out.println(doc.getDocumentElement().getNodeName());
+
+            NodeList messages = doc.getElementsByTagName("Message");
+            if (messages.getLength() > 0) {
+                Element msg = (Element) messages.item(0);
+                System.out.println("Parsed message: " + msg.getTextContent());
+            } else {
+                System.out.println("No <Message> element found.");
+            }
+            
             assert true;
         } catch (Exception e)
         {
