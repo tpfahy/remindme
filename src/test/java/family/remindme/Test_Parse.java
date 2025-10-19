@@ -39,11 +39,11 @@ public class Test_Parse
             NodeList messages = doc.getElementsByTagName("Message");
             if (messages.getLength() > 0) {
                 Element msg = (Element) messages.item(0);
-                System.out.println("Parsed message: " + msg.getTextContent());
+                System.out.println("Parsed message: \n\t" + msg.getTextContent());
             } else {
                 System.out.println("No <Message> element found.");
             }
-            
+            // need to check for an actual value
             assert true;
         } catch (Exception e)
         {
