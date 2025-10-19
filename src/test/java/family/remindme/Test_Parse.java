@@ -6,10 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-
-
 import java.io.File;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -29,7 +26,9 @@ public class Test_Parse
             // should be in the test dir so that path needs to be in the test.
             // Second, there will need to be multiple test files covering all
             // parse issues. 
-            File twilFile = new File("test.xml");
+
+            // is this the best way to parse this?
+            File twilFile = new File("src/test/java/family/remindme/test.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbf.newDocumentBuilder();
             Document doc = dBuilder.parse(twilFile);
