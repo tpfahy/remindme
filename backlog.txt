@@ -7,12 +7,12 @@ TODO:
 
 - Proxy for the app?
 
-- Setup containers to do db testing and other testing: TODO
+- Setup containers to do db testing and other testing
 
-- Host the app somewhere: TODO
+- Host the app somewhere
   - options: Google, AWS
 
-- Write logic for sending queries to the db: TODO
+- Write logic for sending queries to the db
   - think of use cases:
     - upcoming reminders, new reminders, past reminders, all reminders on a certain day etc
     - might need to change the schema of the db to account for 1 more char in the number
@@ -28,6 +28,8 @@ TODO:
 -----------
 IN PROGRESS:
 -----------
+
+- Make the parse class generic
 
 - write unit tests for parsing twilio xml
   - make the test.xml in the same directory as the file, just looks more clean: DONE

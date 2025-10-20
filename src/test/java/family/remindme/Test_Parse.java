@@ -28,7 +28,7 @@ public class Test_Parse
             // Second, there will need to be multiple test files covering all
             // parse issues. 
 
-            InputStream inputStream = getClass().getResourceAsStream("/test.xml");
+            InputStream inputStream = getClass().getResourceAsStream("/list.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbf.newDocumentBuilder();
             Document doc = dBuilder.parse(inputStream);
