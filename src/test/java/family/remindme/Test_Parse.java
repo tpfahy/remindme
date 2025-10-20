@@ -7,6 +7,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import java.io.File;
+import java.io.InputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -15,10 +17,9 @@ public class Test_Parse
 {
     
     @Test
-    public void loadFile(){
+    public void loadTwilml(){
 
-        try
-        {
+        try {
             // currently, this test only handles opening a twilML file and 
             // not really testing any logic. What there are a few improvements 
             // to be made to the testing. First, the path should not be 
@@ -27,28 +28,32 @@ public class Test_Parse
             // Second, there will need to be multiple test files covering all
             // parse issues. 
 
-            // is this the best way to parse this?
-            File twilFile = new File("src/test/java/family/remindme/test.xml");
+            InputStream inputStream = getClass().getResourceAsStream("/test.xml");
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbf.newDocumentBuilder();
-            Document doc = dBuilder.parse(twilFile);
+            Document doc = dBuilder.parse(inputStream);
 
             doc.getDocumentElement().normalize();
 
-            NodeList messages = doc.getElementsByTagName("Message");
+            NodeList messages = doc.getElementsByTagName("Body");
             if (messages.getLength() > 0) {
                 Element msg = (Element) messages.item(0);
-                System.out.println("Parsed message: \n\t" + msg.getTextContent());
-            } else {
-                System.out.println("No <Message> element found.");
-            }
-            // need to check for an actual value
-            assert true;
-        } catch (Exception e)
-        {
-            e.printStackTrace();
+                String strMessage = msg.getTextContent();
+                System.out.println("Parsed message:\n\t" + msg.getTextContent());
+                System.out.println("Attempt to print msg as a string:\n\t" + strMessage.toLowerCase());
+                
+                assert strMessage.toLowerCase().equals("list");
+            } 
+        } catch (Exception e) {
             assert false;
         }
 
+    }
+
+
+    @Test
+    void tenthTest()
+    {
+        assert true;
     }
 }
