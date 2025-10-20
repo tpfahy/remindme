@@ -3,9 +3,13 @@
 TODO:
 ----
 
+- Query the database rather than just connect
+
+- Proxy for the app?
+
 - Setup containers to do db testing and other testing: TODO
 
-- host the app somewhere: TODO
+- Host the app somewhere: TODO
   - options: Google, AWS
 
 - Write logic for sending queries to the db: TODO
@@ -13,7 +17,12 @@ TODO:
     - upcoming reminders, new reminders, past reminders, all reminders on a certain day etc
     - might need to change the schema of the db to account for 1 more char in the number
 
-- Write the container class that is used for testing: TODO
+  - list, list <date>, options, create <description> <date>, set reminder interval, set reminder off
+    delete <id>, reschedule <id> <date>, etc
+
+- Best way to split the string to easily parse?
+
+- Write the container class that is used for testing 
 
 
 -----------
@@ -21,7 +30,7 @@ IN PROGRESS:
 -----------
 
 - write unit tests for parsing twilio xml
-  - make the test.xml in the same directory as the file, just looks more clean
+  - make the test.xml in the same directory as the file, just looks more clean: DONE
   - will need to find a way to have multiple files for each aspect and how to make it
     so each request is transformed into a valid query
 
